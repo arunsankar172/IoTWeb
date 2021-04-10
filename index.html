@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body{
+font-family:verdana;
+background-color:#E0E0E042;
+}
+
+.da{
+  background-color: #B2DFDB;
+  width: suto;
+  padding: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size:30px;
+  margin: 10px;
+  float:left;
+  margin-top:5%;
+  margin-left:33%;
+  border-radius:25px;
+  margin-bottom:10%;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-top:%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #009688;
+  color: white;
+}
+</style>
+</head>
+<body>
+<center><h1>Dashboard</h1>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+</figure>
+
+<div>
+
+<div class="da" style="color:#1A237E">
+<img src="ico1.png" width="50"><b> 30 &#8451;</b>
+</div>
+
+<div class="da" style="margin-left:2%">
+<img src="ico2.png" width="50"><b> 30 % </b>
+</div>
+
+</div>
+
+</center>
+
+
+
+
+<script type="text/javascript">
+var temp = [
+
+[1616684453,20.8],
+[1616684513,21.1],
+[1616684573,28.5],
+[1616684633,25.4],
+[1616684693,28.6],
+[1616684753,18.8],
+[1616684813,29],
+[1616684873,20.2],
+[1616684933,24.4],
+[1616684993,23.6],
+[1616685053,22.8],
+[1616685113,21.8],
+[1616685173,29.1],
+[1616685233,27.5],
+[1616685293,28.4],
+[1616685353,25.6],
+[1616685413,28.8],
+[1616685713,22.8]
+];
+Highcharts.chart('container', {
+  chart: {
+	type:'area',
+	backgroundColor:'#2f2f30'
+  },
+  title: {
+        text: 'Soil Temperature',
+		style: { "color": "#E0E0E3","fontSize": "22px" }
+  },
+  
+  colors:['rgba(43, 144, 143, 0.5)','rgba(144, 238, 126, 0.75)'],
+  legend:{
+	backgroundColor:'black',
+	itemStyle:{"color": "#E0E0E3", "cursor": "pointer", "fontSize": "12px", "fontWeight": "bold", "textOverflow": "ellipsis"},
+	itemHoverStyle:{"color": "#F1F0C5 "}
+  },
+  xAxis: {
+  type:'datetime',
+  },
+  yAxis:{
+  title: {
+            text: 'Temperature',
+			style:{color: "#E0E0E3"}
+     },
+  gridLineColor:'rgb(112, 112, 115)'
+  },
+  
+   tooltip: {
+        pointFormat: '{series.name} Temperature <b>{point.y:,.1f} C  </b>',
+		backgroundColor:'rgba(16, 16, 15,0.5)',
+		style:{color: "#E0E0E3"}
+       
+    },
+	plotOptions: {
+        area: {
+            marker: {
+                enabled: false,
+                symbol: 'circle',
+                radius: 2,
+                states: {
+                    hover: {
+                        enabled: true
+                    }
+                }
+            }
+        }
+  },
+  series: [
+    {
+  <!-- type:'area', -->
+    name: 'Sensor 1',
+    data:temp 
+  }
+  ]
+});
+
+</script>
+<center>
+<table id="customers">
+  <tr>
+    <th>S.No</th>
+    <th>Temperature</th>
+	<th>Humidity</th>
+	<th>Date</th>
+  </tr>
+  
+ <tr><td>1</td><td>25.1</td><td>31</td><td>26-03-2021</td></tr>
+ <tr><td>2</td><td>29.1</td><td>32</td><td>27-03-2021</td></tr>
+ <tr><td>3</td><td>28.5</td><td>50</td><td>26-03-2021</td></tr>
+ <tr><td>4</td><td>28.4</td><td>45</td><td>25-03-2021</td></tr>
+ <tr><td>5</td><td>28.6</td><td>30</td><td>24-03-2021</td></tr>
+ <tr><td>6</td><td>28.8</td><td>30</td><td>23-03-2021</td></tr>
+ <tr><td>7</td><td>29</td><td>32</td><td>22-03-2021</td></tr>
+ <tr><td>8</td><td>29.2</td><td>50</td><td>21-03-2021</td></tr>
+ <tr><td>9</td><td>29.4</td><td>45</td><td>20-03-2021</td></tr>
+ <tr><td>10</td><td>29.6</td><td>30</td><td>19-03-2021</td></tr>
+ <tr><td>11</td><td>29.8</td><td>30</td><td>18-03-2021</td></tr>
+ <tr><td>12</td><td>28.8</td><td>32</td><td>17-03-2021</td></tr>
+ <tr><td>13</td><td>29.1</td><td>50</td><td>16-03-2021</td></tr>
+ <tr><td>14</td><td>28.5</td><td>45</td><td>15-03-2021</td></tr>
+ <tr><td>15</td><td>28.4</td><td>30</td><td>14-03-2021</td></tr>
+ <tr><td>16</td><td>28.6</td><td>32</td><td>13-03-2021</td></tr>
+ <tr><td>17</td><td>28.8</td><td>50</td><td>12-03-2021</td></tr>
+ <tr><td>18</td><td>29</td><td>45</td><td>11-03-2021</td></tr>
+ <tr><td>19</td><td>29.2</td><td>30</td><td>10-03-2021</td></tr>
+ <tr><td>20</td><td>29.4</td><td>32</td><td>09-03-2021</td></tr>
+ <tr><td>21</td><td>29.6</td><td>50</td><td>08-03-2021</td></tr>
+ <tr><td>22</td><td>29.8</td><td>45</td><td>07-03-2021</td></tr>
+
+</table>
+</center>
+
+</body>
+</html>
