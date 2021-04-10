@@ -3,6 +3,7 @@
 <head>
 <title>Weather Dashboard</title>
 <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
 font-family:verdana;
@@ -15,7 +16,6 @@ background-color:#E0E0E042;
   padding: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-size:30px;
-  margin: 10px;
   float:left;
   margin-top:5%;
   margin-left:33%;
@@ -46,6 +46,18 @@ background-color:#E0E0E042;
   background-color: #009688;
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+.da{
+	margin-left:15%;
+}
+.da2{
+	margin-left:53px;
+}	
+#container{
+height:350px;
+}
+
 </style>
 </head>
 <body>
@@ -57,7 +69,7 @@ background-color:#E0E0E042;
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <figure class="highcharts-figure">
-    <div id="container"></div>
+    <div id="container" ></div>
 </figure>
 
 <div>
@@ -66,7 +78,7 @@ background-color:#E0E0E042;
 <img src="ico1.png" width="50"><b> 30 &#8451;</b>
 </div>
 
-<div class="da" style="margin-left:2%">
+<div class="da" style="margin-left:2%;margin-left:53px;">
 <img src="ico2.png" width="50"><b> 30 % </b>
 </div>
 
